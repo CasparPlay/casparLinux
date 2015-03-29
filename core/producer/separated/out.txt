@@ -1,0 +1,8 @@
+In file included from /home/sysnova/workspace/casparLinux/core/producer/frame/basic_frame.h:26:0,
+                 from separated_producer.cpp:28:
+/home/sysnova/workspace/casparLinux/core/video_format.h:108:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::video_format_desc::field_mode’ [-fpermissive]
+  field_mode::type  field_mode; // progressive, interlaced upper field first, interlaced lower field first
+                    ^
+/home/sysnova/workspace/casparLinux/core/video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^

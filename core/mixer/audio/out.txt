@@ -1,0 +1,7 @@
+In file included from audio_util.cpp:24:0:
+audio_util.h:164:2: warning: declaration of ‘const caspar::core::channel_layout& caspar::core::multichannel_view<SampleT, Iter>::channel_layout() const’ [-fpermissive]
+  }
+  ^
+audio_util.h:81:8: warning: changes meaning of ‘channel_layout’ from ‘struct caspar::core::channel_layout’ [-fpermissive]
+ struct channel_layout
+        ^

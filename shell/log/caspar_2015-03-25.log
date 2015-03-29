@@ -1,0 +1,583 @@
+[2015-03-25 15:15:01.463] [140175414413248] [info]    ############################################################################
+[2015-03-25 15:15:01.464] [140175414413248] [info]    CasparCG Server is distributed by the Swedish Broadcasting Corporation (SVT)
+[2015-03-25 15:15:01.464] [140175414413248] [info]    under the GNU General Public License GPLv3 or higher.
+[2015-03-25 15:15:01.464] [140175414413248] [info]    Please see LICENSE.TXT for details.
+[2015-03-25 15:15:01.464] [140175414413248] [info]    http://www.casparcg.com/
+[2015-03-25 15:15:01.464] [140175414413248] [info]    ############################################################################
+[2015-03-25 15:15:01.464] [140175414413248] [info]    Starting CasparCG Video and Graphics Playout Server 2.0.7
+[2015-03-25 15:15:01.464] [140175414413248] [info]    on GNU/Linux Operating System. Debian Wheezy
+[2015-03-25 15:15:01.464] [140175414413248] [info]    AuthenticAMD Athlon(tm) II X2 270 Processor
+[2015-03-25 15:15:01.464] [140175414413248] [info]    Debian GNU/Linux
+[2015-03-25 15:15:01.464] [140175414413248] [info]    FreeImage 3.15.4
+[2015-03-25 15:15:01.464] [140175414413248] [info]    FFMPEG-avcodec 55.52.102
+[2015-03-25 15:15:01.464] [140175414413248] [info]    FFMPEG-avformat 55.33.100
+[2015-03-25 15:15:01.464] [140175414413248] [info]    FFMPEG-avfilter 4.2.100
+[2015-03-25 15:15:01.464] [140175414413248] [info]    FFMPEG-avutil 52.66.100
+[2015-03-25 15:15:01.464] [140175414413248] [info]    FFMPEG-swscale 2.5.102
+[2015-03-25 15:15:01.464] [140175414413248] [info]    casparcg.config:
+-----------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+   <paths>
+      <media-path>media/</media-path>
+      <log-path>log/</log-path>
+      <data-path>data/</data-path>
+      <template-path>templates/</template-path>
+      <thumbnails-path>thumbnails/</thumbnails-path>
+   </paths>
+   <log-level>debug</log-level>
+   <consumers>
+      <buffer-depth>3</buffer-depth>
+   </consumers>
+   <channels>
+      <channel>
+         <video-mode>PAL</video-mode>
+         <consumers>
+            <screen>
+               <device>1</device>
+               <aspect-ratio>default</aspect-ratio>
+               <stretch>fill</stretch>
+               <key-only>false</key-only>
+               <vsync>false</vsync>
+               <name>helloworld</name>
+               <borderless>false</borderless>
+            </screen>
+         </consumers>
+      </channel>
+   </channels>
+   <osc>
+      <default-port>6250</default-port>
+      <predefined-clients>
+         <predefined-client>
+            <address>127.0.0.1</address>
+            <port>5253</port>
+         </predefined-client>
+      </predefined-clients>
+   </osc>
+   <controllers>
+      <tcp>
+         <port>5250</port>
+         <protocol>AMCP</protocol>
+      </tcp>
+   </controllers>
+</configuration>
+-----------------------------------------
+[2015-03-25 15:15:01.464] [140175414413248] [info]    Initializing OpenGL Device.
+[2015-03-25 15:15:01.472] [140175018940160] [info]    OpenGL 3.0 Mesa 10.5.1
+[2015-03-25 15:15:01.472] [140175018940160] [info]    Successfully initialized OpenGL Device.
+[2015-03-25 15:15:01.472] [140175414413248] [info]    about to initialize ffmpeg module.
+[2015-03-25 15:15:01.473] [140175414413248] [info]    after ffmpeg init() 
+
+[2015-03-25 15:15:01.473] [140175414413248] [info]    Initialized ffmpeg module.
+[2015-03-25 15:15:01.473] [140175414413248] [info]    Initialized oal module.
+[2015-03-25 15:15:01.473] [140175414413248] [info]    Initialized ogl module.
+[2015-03-25 15:15:01.473] [140175414413248] [info]    Initialized image module.
+[2015-03-25 15:15:01.499] [140175018940160] [info]    [shader] Blend-modes are disabled.
+[2015-03-25 15:15:01.499] [140175414413248] [warning] [image_mixer] TextureBarrierNV not supported. Post processing will not be available
+[2015-03-25 15:15:01.499] [140175414413248] [info]    video_channel[1|PAL] Successfully Initialized.
+[2015-03-25 15:15:01.499] [140175414413248] [info]    format_desc ===>>>> PAL
+[2015-03-25 15:15:01.501] [140175414413248] [info]    
++---------------+
+| filter_buffer |default--[720x576 64:45 bgra]--auto-inserted scaler 1:default
+|   (buffer)    |
++---------------+
+
+                                                             +-------------------+
+auto-inserted scaler 0:default--[720x576 64:45 bgra]--default| filter_buffersink |
+                                                             |   (buffersink)    |
+                                                             +-------------------+
+
+                                                             +-----------------+
+auto-inserted scaler 1:default--[720x576 64:45 gbrp]--default| Parsed_format_0 |default--[720x576 64:45 gbrp]--Parsed_yadif_1:default
+                                                             |    (format)     |
+                                                             +-----------------+
+
+                                                      +----------------+
+Parsed_format_0:default--[720x576 64:45 gbrp]--default| Parsed_yadif_1 |default--[720x576 64:45 gbrp]--auto-inserted scaler 0:default
+                                                      |    (yadif)     |
+                                                      +----------------+
+
+                                                     +------------------------+
+Parsed_yadif_1:default--[720x576 64:45 gbrp]--default| auto-inserted scaler 0 |default--[720x576 64:45 bgra]--filter_buffersink:default
+                                                     |        (scale)         |
+                                                     +------------------------+
+
+                                                    +------------------------+
+filter_buffer:default--[720x576 64:45 bgra]--default| auto-inserted scaler 1 |default--[720x576 64:45 gbrp]--Parsed_format_0:default
+                                                    |        (scale)         |
+                                                    +------------------------+
+
+
+[2015-03-25 15:15:01.502] [140175414413248] [warning] helloworld [1|PAL] Could not find display settings for screen-index: 0
+[2015-03-25 15:15:01.502] [140175414413248] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:15:01.502] [140175002154752] [info]    output[1] helloworld [1|PAL] Added.
+[2015-03-25 15:15:01.504] [140175414413248] [error]   About to Start AsyncEventServer...
+[2015-03-25 15:15:01.504] [140175414413248] [info]    pthread_create successfully
+[2015-03-25 15:15:01.505] [140175414413248] [info]    Listener successfully initialized
+[2015-03-25 15:15:01.505] [140175414413248] [info]    Initialized controllers.
+[2015-03-25 15:15:01.506] [140175414413248] [info]    Initialized osc.
+[2015-03-25 15:15:01.506] [140175414413248] [info]    amcp Parser has been setup...
+[2015-03-25 15:15:01.507] [140174908172032] [info]    socket => 10
+[2015-03-25 15:15:01.558] [140174941738752] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:15:02.524] [140174941738752] [info]    on_scheduler_entry
+[2015-03-25 15:15:02.525] [140174852925184] [info]    on_scheduler_entry
+[2015-03-25 15:15:09.179] [140174882993920] [info]    message is: load 1-1 logo3
+[2015-03-25 15:15:09.179] [140174882993920] [info]    Received message from Console: load 1-1 logo3\r\n
+[2015-03-25 15:15:09.179] [140174882993920] [info]    Interpreting command => load 1-1 logo3
+[2015-03-25 15:15:09.179] [140174882993920] [info]    CommandFactory load
+[2015-03-25 15:15:09.179] [140174882993920] [info]    GetCommand 0x7f7d0069bf18
+[2015-03-25 15:15:09.179] [140174882993920] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:15:09.179] [140174882993920] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:15:09.179] [140174891386624] [info]    do_create_producer failed...
+[2015-03-25 15:15:09.180] [140174891386624] [info]    params.at_original is: logo3
+[2015-03-25 15:15:09.180] [140174891386624] [info]    resource_name not empty! logo3
+[2015-03-25 15:15:09.180] [140174891386624] [info]    do_create_producer failed...
+[2015-03-25 15:15:09.180] [140174891386624] [info]    do_create_producer failed...
+[2015-03-25 15:15:09.198] [140174891386624] [error]   frame_producer.cpp(399): Throw in function caspar::safe_ptr<caspar::core::frame_producer> caspar::core::create_producer(const caspar::safe_ptr<caspar::core::frame_factory>&, const caspar::core::parameters&)
+Dynamic exception type: boost::exception_detail::clone_impl<caspar::file_not_found>
+std::exception::what: std::exception
+[caspar::tag_msg_info*] = No match found for supplied commands. Check syntax.
+[caspar::tag_arg_value_info*] = logo3 
+
+[2015-03-25 15:15:09.198] [140174891386624] [warning] Failed to execute command: LoadCommand on AMCPCommandQueue Channel 1 for Console
+[2015-03-25 15:16:36.897] [140173325735872] [info]    ############################################################################
+[2015-03-25 15:16:36.898] [140173325735872] [info]    CasparCG Server is distributed by the Swedish Broadcasting Corporation (SVT)
+[2015-03-25 15:16:36.898] [140173325735872] [info]    under the GNU General Public License GPLv3 or higher.
+[2015-03-25 15:16:36.898] [140173325735872] [info]    Please see LICENSE.TXT for details.
+[2015-03-25 15:16:36.898] [140173325735872] [info]    http://www.casparcg.com/
+[2015-03-25 15:16:36.898] [140173325735872] [info]    ############################################################################
+[2015-03-25 15:16:36.898] [140173325735872] [info]    Starting CasparCG Video and Graphics Playout Server 2.0.7
+[2015-03-25 15:16:36.898] [140173325735872] [info]    on GNU/Linux Operating System. Debian Wheezy
+[2015-03-25 15:16:36.898] [140173325735872] [info]    AuthenticAMD Athlon(tm) II X2 270 Processor
+[2015-03-25 15:16:36.898] [140173325735872] [info]    Debian GNU/Linux
+[2015-03-25 15:16:36.898] [140173325735872] [info]    FreeImage 3.15.4
+[2015-03-25 15:16:36.898] [140173325735872] [info]    FFMPEG-avcodec 55.52.102
+[2015-03-25 15:16:36.898] [140173325735872] [info]    FFMPEG-avformat 55.33.100
+[2015-03-25 15:16:36.898] [140173325735872] [info]    FFMPEG-avfilter 4.2.100
+[2015-03-25 15:16:36.898] [140173325735872] [info]    FFMPEG-avutil 52.66.100
+[2015-03-25 15:16:36.898] [140173325735872] [info]    FFMPEG-swscale 2.5.102
+[2015-03-25 15:16:36.898] [140173325735872] [info]    casparcg.config:
+-----------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+   <paths>
+      <media-path>media/</media-path>
+      <log-path>log/</log-path>
+      <data-path>data/</data-path>
+      <template-path>templates/</template-path>
+      <thumbnails-path>thumbnails/</thumbnails-path>
+   </paths>
+   <log-level>debug</log-level>
+   <consumers>
+      <buffer-depth>3</buffer-depth>
+   </consumers>
+   <channels>
+      <channel>
+         <video-mode>PAL</video-mode>
+         <consumers>
+            <screen>
+               <device>1</device>
+               <aspect-ratio>default</aspect-ratio>
+               <stretch>fill</stretch>
+               <key-only>false</key-only>
+               <vsync>false</vsync>
+               <name>helloworld</name>
+               <borderless>false</borderless>
+            </screen>
+         </consumers>
+      </channel>
+   </channels>
+   <osc>
+      <default-port>6250</default-port>
+      <predefined-clients>
+         <predefined-client>
+            <address>127.0.0.1</address>
+            <port>5253</port>
+         </predefined-client>
+      </predefined-clients>
+   </osc>
+   <controllers>
+      <tcp>
+         <port>5250</port>
+         <protocol>AMCP</protocol>
+      </tcp>
+   </controllers>
+</configuration>
+-----------------------------------------
+[2015-03-25 15:16:36.898] [140173325735872] [info]    Initializing OpenGL Device.
+[2015-03-25 15:16:36.906] [140172930242304] [info]    OpenGL 3.0 Mesa 10.5.1
+[2015-03-25 15:16:36.906] [140172930242304] [info]    Successfully initialized OpenGL Device.
+[2015-03-25 15:16:36.906] [140173325735872] [info]    about to initialize ffmpeg module.
+[2015-03-25 15:16:36.907] [140173325735872] [info]    after ffmpeg init() 
+
+[2015-03-25 15:16:36.907] [140173325735872] [info]    Initialized ffmpeg module.
+[2015-03-25 15:16:36.907] [140173325735872] [info]    Initialized oal module.
+[2015-03-25 15:16:36.907] [140173325735872] [info]    Initialized ogl module.
+[2015-03-25 15:16:36.907] [140173325735872] [info]    Initialized image module.
+[2015-03-25 15:16:36.933] [140172930242304] [info]    [shader] Blend-modes are disabled.
+[2015-03-25 15:16:36.933] [140173325735872] [warning] [image_mixer] TextureBarrierNV not supported. Post processing will not be available
+[2015-03-25 15:16:36.933] [140173325735872] [info]    video_channel[1|PAL] Successfully Initialized.
+[2015-03-25 15:16:36.933] [140173325735872] [info]    format_desc ===>>>> PAL
+[2015-03-25 15:16:36.935] [140173325735872] [info]    
++---------------+
+| filter_buffer |default--[720x576 64:45 bgra]--auto-inserted scaler 1:default
+|   (buffer)    |
++---------------+
+
+                                                             +-------------------+
+auto-inserted scaler 0:default--[720x576 64:45 bgra]--default| filter_buffersink |
+                                                             |   (buffersink)    |
+                                                             +-------------------+
+
+                                                             +-----------------+
+auto-inserted scaler 1:default--[720x576 64:45 gbrp]--default| Parsed_format_0 |default--[720x576 64:45 gbrp]--Parsed_yadif_1:default
+                                                             |    (format)     |
+                                                             +-----------------+
+
+                                                      +----------------+
+Parsed_format_0:default--[720x576 64:45 gbrp]--default| Parsed_yadif_1 |default--[720x576 64:45 gbrp]--auto-inserted scaler 0:default
+                                                      |    (yadif)     |
+                                                      +----------------+
+
+                                                     +------------------------+
+Parsed_yadif_1:default--[720x576 64:45 gbrp]--default| auto-inserted scaler 0 |default--[720x576 64:45 bgra]--filter_buffersink:default
+                                                     |        (scale)         |
+                                                     +------------------------+
+
+                                                    +------------------------+
+filter_buffer:default--[720x576 64:45 bgra]--default| auto-inserted scaler 1 |default--[720x576 64:45 gbrp]--Parsed_format_0:default
+                                                    |        (scale)         |
+                                                    +------------------------+
+
+
+[2015-03-25 15:16:36.936] [140173325735872] [warning] helloworld [1|PAL] Could not find display settings for screen-index: 0
+[2015-03-25 15:16:36.936] [140173325735872] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:16:36.936] [140172913456896] [info]    output[1] helloworld [1|PAL] Added.
+[2015-03-25 15:16:36.936] [140173325735872] [error]   About to Start AsyncEventServer...
+[2015-03-25 15:16:36.936] [140173325735872] [info]    pthread_create successfully
+[2015-03-25 15:16:36.936] [140173325735872] [info]    Listener successfully initialized
+[2015-03-25 15:16:36.936] [140173325735872] [info]    Initialized controllers.
+[2015-03-25 15:16:36.936] [140173325735872] [info]    Initialized osc.
+[2015-03-25 15:16:36.936] [140173325735872] [info]    amcp Parser has been setup...
+[2015-03-25 15:16:36.937] [140172827862784] [info]    socket => 10
+[2015-03-25 15:16:36.986] [140172853040896] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:16:37.961] [140172853040896] [info]    on_scheduler_entry
+[2015-03-25 15:16:37.962] [140172762507008] [info]    on_scheduler_entry
+[2015-03-25 15:16:47.914] [140172802684672] [info]    message is: load 1-10 deepto
+[2015-03-25 15:16:47.914] [140172802684672] [info]    Received message from Console: load 1-10 deepto\r\n
+[2015-03-25 15:16:47.914] [140172802684672] [info]    Interpreting command => load 1-10 deepto
+[2015-03-25 15:16:47.914] [140172802684672] [info]    CommandFactory load
+[2015-03-25 15:16:47.914] [140172802684672] [info]    GetCommand 0x7f7c83c63e18
+[2015-03-25 15:16:47.915] [140172802684672] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:16:47.915] [140172802684672] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:16:47.915] [140172811077376] [info]    Looking for file => media/deepto.png
+[2015-03-25 15:16:47.937] [140172811077376] [info]    image_producer[media/deepto.png] Initialized.
+[2015-03-25 15:16:47.937] [140172811077376] [info]    params.at_original is: deepto
+[2015-03-25 15:16:47.938] [140172811077376] [info]    resource_name not empty! deepto
+[2015-03-25 15:16:47.938] [140172811077376] [info]    do_create_producer failed...
+[2015-03-25 15:16:47.939] [140172811077376] [info]    do_create_producer failed...
+[2015-03-25 15:16:47.939] [140172811077376] [info]    returing valid producer... 
+[2015-03-25 15:16:47.939] [140172811077376] [info]    image_producer[media/deepto.png] Uninitialized.
+[2015-03-25 15:16:47.939] [140172811077376] [debug]   Executed command: LoadCommand
+[2015-03-25 15:16:47.948] [140172896671488] [info]    on_scheduler_entry
+[2015-03-25 15:16:53.373] [140172802684672] [info]    message is: play 1-10
+[2015-03-25 15:16:53.373] [140172802684672] [info]    Received message from Console: play 1-10\r\n
+[2015-03-25 15:16:53.373] [140172802684672] [info]    Interpreting command => play 1-10
+[2015-03-25 15:16:53.373] [140172802684672] [info]    CommandFactory play
+[2015-03-25 15:16:53.373] [140172802684672] [info]    GetCommand 0x7f7c83c63d18
+[2015-03-25 15:16:53.373] [140172802684672] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:16:53.373] [140172802684672] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:16:53.373] [140172811077376] [debug]   Executed command: PlayCommand
+[2015-03-25 15:17:16.155] [140172802684672] [info]    message is: clear 1
+[2015-03-25 15:17:16.155] [140172802684672] [info]    Received message from Console: clear 1\r\n
+[2015-03-25 15:17:16.155] [140172802684672] [info]    Interpreting command => clear 1
+[2015-03-25 15:17:16.155] [140172802684672] [info]    CommandFactory clear
+[2015-03-25 15:17:16.155] [140172802684672] [info]    GetCommand 0x7f7c83c63c18
+[2015-03-25 15:17:16.155] [140172802684672] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:17:16.155] [140172802684672] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:17:16.155] [140172811077376] [debug]   Executed command: ClearCommand
+[2015-03-25 15:17:21.425] [140172802684672] [info]    message is: diag
+[2015-03-25 15:17:21.425] [140172802684672] [info]    Received message from Console: diag\r\n
+[2015-03-25 15:17:21.425] [140172802684672] [info]    Interpreting command => diag
+[2015-03-25 15:17:21.425] [140172802684672] [info]    CommandFactory diag
+[2015-03-25 15:17:21.425] [140172802684672] [info]    GetCommand 0x7f7c83c63b18
+[2015-03-25 15:17:21.425] [140172819470080] [debug]   Executed command: DiagnosticsCommand
+[2015-03-25 15:42:27.675] [140530952083392] [info]    ############################################################################
+[2015-03-25 15:42:27.676] [140530952083392] [info]    CasparCG Server is distributed by the Swedish Broadcasting Corporation (SVT)
+[2015-03-25 15:42:27.676] [140530952083392] [info]    under the GNU General Public License GPLv3 or higher.
+[2015-03-25 15:42:27.676] [140530952083392] [info]    Please see LICENSE.TXT for details.
+[2015-03-25 15:42:27.676] [140530952083392] [info]    http://www.casparcg.com/
+[2015-03-25 15:42:27.676] [140530952083392] [info]    ############################################################################
+[2015-03-25 15:42:27.676] [140530952083392] [info]    Starting CasparCG Video and Graphics Playout Server 2.0.7
+[2015-03-25 15:42:27.676] [140530952083392] [info]    on GNU/Linux Operating System. Debian Wheezy
+[2015-03-25 15:42:27.676] [140530952083392] [info]    AuthenticAMD Athlon(tm) II X2 270 Processor
+[2015-03-25 15:42:27.676] [140530952083392] [info]    Debian GNU/Linux
+[2015-03-25 15:42:27.676] [140530952083392] [info]    FreeImage 3.15.4
+[2015-03-25 15:42:27.676] [140530952083392] [info]    FFMPEG-avcodec 55.52.102
+[2015-03-25 15:42:27.676] [140530952083392] [info]    FFMPEG-avformat 55.33.100
+[2015-03-25 15:42:27.677] [140530952083392] [info]    FFMPEG-avfilter 4.2.100
+[2015-03-25 15:42:27.677] [140530952083392] [info]    FFMPEG-avutil 52.66.100
+[2015-03-25 15:42:27.677] [140530952083392] [info]    FFMPEG-swscale 2.5.102
+[2015-03-25 15:42:27.677] [140530952083392] [info]    casparcg.config:
+-----------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+   <paths>
+      <media-path>media/</media-path>
+      <log-path>log/</log-path>
+      <data-path>data/</data-path>
+      <template-path>templates/</template-path>
+      <thumbnails-path>thumbnails/</thumbnails-path>
+   </paths>
+   <log-level>debug</log-level>
+   <consumers>
+      <buffer-depth>3</buffer-depth>
+   </consumers>
+   <channels>
+      <channel>
+         <video-mode>PAL</video-mode>
+         <consumers>
+            <screen>
+               <device>1</device>
+               <aspect-ratio>default</aspect-ratio>
+               <stretch>fill</stretch>
+               <key-only>false</key-only>
+               <vsync>false</vsync>
+               <name>helloworld</name>
+               <borderless>false</borderless>
+            </screen>
+         </consumers>
+      </channel>
+   </channels>
+   <osc>
+      <default-port>6250</default-port>
+      <predefined-clients>
+         <predefined-client>
+            <address>127.0.0.1</address>
+            <port>5253</port>
+         </predefined-client>
+      </predefined-clients>
+   </osc>
+   <controllers>
+      <tcp>
+         <port>5250</port>
+         <protocol>AMCP</protocol>
+      </tcp>
+   </controllers>
+</configuration>
+-----------------------------------------
+[2015-03-25 15:42:27.684] [140530952083392] [info]    Initializing OpenGL Device.
+[2015-03-25 15:42:27.691] [140530556589824] [info]    OpenGL 3.0 Mesa 10.5.1
+[2015-03-25 15:42:27.691] [140530556589824] [info]    Successfully initialized OpenGL Device.
+[2015-03-25 15:42:27.692] [140530952083392] [info]    about to initialize ffmpeg module.
+[2015-03-25 15:42:27.692] [140530952083392] [info]    after ffmpeg init() 
+
+[2015-03-25 15:42:27.692] [140530952083392] [info]    Initialized ffmpeg module.
+[2015-03-25 15:42:27.692] [140530952083392] [info]    Initialized oal module.
+[2015-03-25 15:42:27.692] [140530952083392] [info]    Initialized ogl module.
+[2015-03-25 15:42:27.692] [140530952083392] [info]    Initialized image module.
+[2015-03-25 15:42:27.720] [140530556589824] [info]    [shader] Blend-modes are disabled.
+[2015-03-25 15:42:27.720] [140530952083392] [warning] [image_mixer] TextureBarrierNV not supported. Post processing will not be available
+[2015-03-25 15:42:27.720] [140530952083392] [info]    video_channel[1|PAL] Successfully Initialized.
+[2015-03-25 15:42:27.721] [140530952083392] [info]    format_desc ===>>>> PAL
+[2015-03-25 15:42:27.726] [140530952083392] [info]    
++---------------+
+| filter_buffer |default--[720x576 64:45 bgra]--auto-inserted scaler 1:default
+|   (buffer)    |
++---------------+
+
+                                                             +-------------------+
+auto-inserted scaler 0:default--[720x576 64:45 bgra]--default| filter_buffersink |
+                                                             |   (buffersink)    |
+                                                             +-------------------+
+
+                                                             +-----------------+
+auto-inserted scaler 1:default--[720x576 64:45 gbrp]--default| Parsed_format_0 |default--[720x576 64:45 gbrp]--Parsed_yadif_1:default
+                                                             |    (format)     |
+                                                             +-----------------+
+
+                                                      +----------------+
+Parsed_format_0:default--[720x576 64:45 gbrp]--default| Parsed_yadif_1 |default--[720x576 64:45 gbrp]--auto-inserted scaler 0:default
+                                                      |    (yadif)     |
+                                                      +----------------+
+
+                                                     +------------------------+
+Parsed_yadif_1:default--[720x576 64:45 gbrp]--default| auto-inserted scaler 0 |default--[720x576 64:45 bgra]--filter_buffersink:default
+                                                     |        (scale)         |
+                                                     +------------------------+
+
+                                                    +------------------------+
+filter_buffer:default--[720x576 64:45 bgra]--default| auto-inserted scaler 1 |default--[720x576 64:45 gbrp]--Parsed_format_0:default
+                                                    |        (scale)         |
+                                                    +------------------------+
+
+
+[2015-03-25 15:42:27.726] [140530952083392] [warning] helloworld [1|PAL] Could not find display settings for screen-index: 0
+[2015-03-25 15:42:27.726] [140530952083392] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:42:27.728] [140530539804416] [info]    output[1] helloworld [1|PAL] Added.
+[2015-03-25 15:42:27.728] [140530952083392] [error]   About to Start AsyncEventServer...
+[2015-03-25 15:42:27.728] [140530952083392] [info]    pthread_create successfully
+[2015-03-25 15:42:27.728] [140530952083392] [info]    Listener successfully initialized
+[2015-03-25 15:42:27.729] [140530952083392] [info]    Initialized controllers.
+[2015-03-25 15:42:27.729] [140530952083392] [info]    Initialized osc.
+[2015-03-25 15:42:27.729] [140530952083392] [info]    amcp Parser has been setup...
+[2015-03-25 15:42:27.739] [140530442487552] [info]    socket => 10
+[2015-03-25 15:42:27.781] [140530476054272] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:42:29.740] [140530476054272] [info]    on_scheduler_entry
+[2015-03-25 15:42:29.741] [140530391004928] [info]    on_scheduler_entry
+[2015-03-25 15:42:36.165] [140530417309440] [info]    message is: load 1-1 deepto
+[2015-03-25 15:42:36.166] [140530417309440] [info]    Received message from Console: load 1-1 deepto\r\n
+[2015-03-25 15:42:36.166] [140530417309440] [info]    Interpreting command => load 1-1 deepto
+[2015-03-25 15:42:36.166] [140530417309440] [info]    CommandFactory load
+[2015-03-25 15:42:36.166] [140530417309440] [info]    GetCommand 0x7fcfc7b9bf18
+[2015-03-25 15:42:36.166] [140530417309440] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:42:36.166] [140530417309440] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:42:36.167] [140530425702144] [info]    Looking for file => media/deepto.png
+[2015-03-25 15:42:36.181] [140530425702144] [info]    image_producer[media/deepto.png] Initialized.
+[2015-03-25 15:42:36.182] [140530425702144] [info]    params.at_original is: deepto
+[2015-03-25 15:42:36.182] [140530425702144] [info]    resource_name not empty! deepto
+[2015-03-25 15:42:36.182] [140530425702144] [info]    do_create_producer failed...
+[2015-03-25 15:42:36.183] [140530425702144] [info]    do_create_producer failed...
+[2015-03-25 15:42:36.183] [140530425702144] [info]    returing valid producer... 
+[2015-03-25 15:42:36.183] [140530425702144] [info]    image_producer[media/deepto.png] Uninitialized.
+[2015-03-25 15:42:36.183] [140530425702144] [debug]   Executed command: LoadCommand
+[2015-03-25 15:42:36.732] [140530523019008] [info]    on_scheduler_entry
+[2015-03-25 15:42:38.129] [140530417309440] [info]    message is: play 1-1
+[2015-03-25 15:42:38.129] [140530417309440] [info]    Received message from Console: play 1-1\r\n
+[2015-03-25 15:42:38.129] [140530417309440] [info]    Interpreting command => play 1-1
+[2015-03-25 15:42:38.129] [140530417309440] [info]    CommandFactory play
+[2015-03-25 15:42:38.129] [140530417309440] [info]    GetCommand 0x7fcfc7b9be18
+[2015-03-25 15:42:38.129] [140530417309440] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:42:38.129] [140530417309440] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:42:38.130] [140530425702144] [debug]   Executed command: PlayCommand
+[2015-03-25 15:43:56.001] [139647290128320] [info]    ############################################################################
+[2015-03-25 15:43:56.002] [139647290128320] [info]    CasparCG Server is distributed by the Swedish Broadcasting Corporation (SVT)
+[2015-03-25 15:43:56.002] [139647290128320] [info]    under the GNU General Public License GPLv3 or higher.
+[2015-03-25 15:43:56.002] [139647290128320] [info]    Please see LICENSE.TXT for details.
+[2015-03-25 15:43:56.002] [139647290128320] [info]    http://www.casparcg.com/
+[2015-03-25 15:43:56.002] [139647290128320] [info]    ############################################################################
+[2015-03-25 15:43:56.002] [139647290128320] [info]    Starting CasparCG Video and Graphics Playout Server 2.0.7
+[2015-03-25 15:43:56.002] [139647290128320] [info]    on GNU/Linux Operating System. Debian Wheezy
+[2015-03-25 15:43:56.002] [139647290128320] [info]    AuthenticAMD Athlon(tm) II X2 270 Processor
+[2015-03-25 15:43:56.002] [139647290128320] [info]    Debian GNU/Linux
+[2015-03-25 15:43:56.002] [139647290128320] [info]    FreeImage 3.15.4
+[2015-03-25 15:43:56.002] [139647290128320] [info]    FFMPEG-avcodec 55.52.102
+[2015-03-25 15:43:56.002] [139647290128320] [info]    FFMPEG-avformat 55.33.100
+[2015-03-25 15:43:56.002] [139647290128320] [info]    FFMPEG-avfilter 4.2.100
+[2015-03-25 15:43:56.002] [139647290128320] [info]    FFMPEG-avutil 52.66.100
+[2015-03-25 15:43:56.002] [139647290128320] [info]    FFMPEG-swscale 2.5.102
+[2015-03-25 15:43:56.002] [139647290128320] [info]    casparcg.config:
+-----------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+   <paths>
+      <media-path>media/</media-path>
+      <log-path>log/</log-path>
+      <data-path>data/</data-path>
+      <template-path>templates/</template-path>
+      <thumbnails-path>thumbnails/</thumbnails-path>
+   </paths>
+   <log-level>debug</log-level>
+   <consumers>
+      <buffer-depth>3</buffer-depth>
+   </consumers>
+   <channels>
+      <channel>
+         <video-mode>PAL</video-mode>
+         <consumers>
+            <screen>
+               <device>1</device>
+               <aspect-ratio>default</aspect-ratio>
+               <stretch>fill</stretch>
+               <key-only>false</key-only>
+               <vsync>false</vsync>
+               <name>helloworld</name>
+               <borderless>false</borderless>
+            </screen>
+         </consumers>
+      </channel>
+   </channels>
+   <osc>
+      <default-port>6250</default-port>
+      <predefined-clients>
+         <predefined-client>
+            <address>127.0.0.1</address>
+            <port>5253</port>
+         </predefined-client>
+      </predefined-clients>
+   </osc>
+   <controllers>
+      <tcp>
+         <port>5250</port>
+         <protocol>AMCP</protocol>
+      </tcp>
+   </controllers>
+</configuration>
+-----------------------------------------
+[2015-03-25 15:43:56.002] [139647290128320] [info]    Initializing OpenGL Device.
+[2015-03-25 15:43:56.010] [139646894659328] [info]    OpenGL 3.0 Mesa 10.5.1
+[2015-03-25 15:43:56.010] [139646894659328] [info]    Successfully initialized OpenGL Device.
+[2015-03-25 15:43:56.011] [139647290128320] [info]    about to initialize ffmpeg module.
+[2015-03-25 15:43:56.011] [139647290128320] [info]    after ffmpeg init() 
+
+[2015-03-25 15:43:56.011] [139647290128320] [info]    Initialized ffmpeg module.
+[2015-03-25 15:43:56.011] [139647290128320] [info]    Initialized oal module.
+[2015-03-25 15:43:56.011] [139647290128320] [info]    Initialized ogl module.
+[2015-03-25 15:43:56.011] [139647290128320] [info]    Initialized image module.
+[2015-03-25 15:43:56.037] [139646894659328] [info]    [shader] Blend-modes are disabled.
+[2015-03-25 15:43:56.037] [139647290128320] [warning] [image_mixer] TextureBarrierNV not supported. Post processing will not be available
+[2015-03-25 15:43:56.038] [139647290128320] [info]    video_channel[1|PAL] Successfully Initialized.
+[2015-03-25 15:43:56.038] [139647290128320] [info]    format_desc ===>>>> PAL
+[2015-03-25 15:43:56.048] [139647290128320] [info]    
++---------------+
+| filter_buffer |default--[720x576 64:45 bgra]--auto-inserted scaler 1:default
+|   (buffer)    |
++---------------+
+
+                                                             +-------------------+
+auto-inserted scaler 0:default--[720x576 64:45 bgra]--default| filter_buffersink |
+                                                             |   (buffersink)    |
+                                                             +-------------------+
+
+                                                             +-----------------+
+auto-inserted scaler 1:default--[720x576 64:45 gbrp]--default| Parsed_format_0 |default--[720x576 64:45 gbrp]--Parsed_yadif_1:default
+                                                             |    (format)     |
+                                                             +-----------------+
+
+                                                      +----------------+
+Parsed_format_0:default--[720x576 64:45 gbrp]--default| Parsed_yadif_1 |default--[720x576 64:45 gbrp]--auto-inserted scaler 0:default
+                                                      |    (yadif)     |
+                                                      +----------------+
+
+                                                     +------------------------+
+Parsed_yadif_1:default--[720x576 64:45 gbrp]--default| auto-inserted scaler 0 |default--[720x576 64:45 bgra]--filter_buffersink:default
+                                                     |        (scale)         |
+                                                     +------------------------+
+
+                                                    +------------------------+
+filter_buffer:default--[720x576 64:45 bgra]--default| auto-inserted scaler 1 |default--[720x576 64:45 gbrp]--Parsed_format_0:default
+                                                    |        (scale)         |
+                                                    +------------------------+
+
+
+[2015-03-25 15:43:56.048] [139647290128320] [warning] helloworld [1|PAL] Could not find display settings for screen-index: 0
+[2015-03-25 15:43:56.048] [139647290128320] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:43:56.048] [139646877873920] [info]    output[1] helloworld [1|PAL] Added.
+[2015-03-25 15:43:56.049] [139647290128320] [error]   About to Start AsyncEventServer...
+[2015-03-25 15:43:56.050] [139647290128320] [info]    pthread_create successfully
+[2015-03-25 15:43:56.050] [139647290128320] [info]    Listener successfully initialized
+[2015-03-25 15:43:56.050] [139647290128320] [info]    Initialized controllers.
+[2015-03-25 15:43:56.050] [139647290128320] [info]    Initialized osc.
+[2015-03-25 15:43:56.051] [139647290128320] [info]    amcp Parser has been setup...
+[2015-03-25 15:43:56.052] [139646780557056] [info]    socket => 10
+[2015-03-25 15:43:56.069] [139646814123776] [info]    helloworld [1|PAL] Successfully Initialized.
+[2015-03-25 15:43:58.061] [139646814123776] [info]    on_scheduler_entry
+[2015-03-25 15:43:58.062] [139646729074432] [info]    on_scheduler_entry
+[2015-03-25 15:44:00.826] [139646755378944] [info]    message is: clear 1
+[2015-03-25 15:44:00.826] [139646755378944] [info]    Received message from Console: clear 1\r\n
+[2015-03-25 15:44:00.826] [139646755378944] [info]    Interpreting command => clear 1
+[2015-03-25 15:44:00.826] [139646755378944] [info]    CommandFactory clear
+[2015-03-25 15:44:00.826] [139646755378944] [info]    GetCommand 0x7f02095ebf18
+[2015-03-25 15:44:00.826] [139646755378944] [info]    QueueCommand NeedChannel...
+[2015-03-25 15:44:00.827] [139646755378944] [info]    QueueCommand AddingCommand on channelIndex...
+[2015-03-25 15:44:00.827] [139646763771648] [debug]   Executed command: ClearCommand

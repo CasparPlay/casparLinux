@@ -1,0 +1,39 @@
+In file included from frame_consumer.cpp:31:0:
+/home/sysnova/workspace/casparLinux/core/video_format.h:108:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::video_format_desc::field_mode’ [-fpermissive]
+  field_mode::type  field_mode; // progressive, interlaced upper field first, interlaced lower field first
+                    ^
+/home/sysnova/workspace/casparLinux/core/video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^
+In file included from /home/sysnova/workspace/casparLinux/core/mixer/read_frame.h:27:0,
+                 from frame_consumer.cpp:32:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:164:2: warning: declaration of ‘const caspar::core::channel_layout& caspar::core::multichannel_view<SampleT, Iter>::channel_layout() const’ [-fpermissive]
+  }
+  ^
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:81:8: warning: changes meaning of ‘channel_layout’ from ‘struct caspar::core::channel_layout’ [-fpermissive]
+ struct channel_layout
+        ^
+In file included from frame_consumer.cpp:32:0:
+/home/sysnova/workspace/casparLinux/core/mixer/read_frame.h:58:124: warning: declaration of ‘virtual const caspar::core::multichannel_view<const int, const int*> caspar::core::read_frame::multichannel_view() const’ [-fpermissive]
+  virtual const multichannel_view<const int32_t, boost::iterator_range<const int32_t*>::const_iterator> multichannel_view() const;
+                                                                                                                            ^
+In file included from /home/sysnova/workspace/casparLinux/core/mixer/read_frame.h:27:0,
+                 from frame_consumer.cpp:32:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:108:7: warning: changes meaning of ‘multichannel_view’ from ‘class caspar::core::multichannel_view<const int, const int*>’ [-fpermissive]
+ class multichannel_view
+       ^
+frame_consumer.cpp: In function ‘caspar::safe_ptr<caspar::core::frame_consumer> caspar::core::create_consumer(const caspar::core::parameters&)’:
+frame_consumer.cpp:51:40: error: cannot call member function ‘const caspar::safe_ptr<caspar::core::frame_consumer>& caspar::core::frame_consumer::empty()’ without object
+  auto consumer = frame_consumer::empty();
+                                        ^
+frame_consumer.cpp: In lambda function:
+frame_consumer.cpp:62:45: error: cannot call member function ‘const caspar::safe_ptr<caspar::core::frame_consumer>& caspar::core::frame_consumer::empty()’ without object
+    return consumer != frame_consumer::empty();
+                                             ^
+frame_consumer.cpp: In function ‘caspar::safe_ptr<caspar::core::frame_consumer> caspar::core::create_consumer(const caspar::core::parameters&)’:
+frame_consumer.cpp:65:39: error: cannot call member function ‘const caspar::safe_ptr<caspar::core::frame_consumer>& caspar::core::frame_consumer::empty()’ without object
+  if(consumer == frame_consumer::empty())
+                                       ^
+frame_consumer.cpp:69:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^

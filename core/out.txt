@@ -1,0 +1,48 @@
+In file included from video_channel.cpp:24:0:
+video_channel.h:56:24: warning: declaration of ‘caspar::safe_ptr<caspar::core::stage> caspar::core::video_channel::stage()’ [-fpermissive]
+  safe_ptr<stage> stage();
+                        ^
+In file included from video_channel.cpp:24:0:
+video_channel.h:35:7: warning: changes meaning of ‘stage’ from ‘class caspar::core::stage’ [-fpermissive]
+ class stage;
+       ^
+In file included from video_channel.cpp:24:0:
+video_channel.h:57:24: warning: declaration of ‘caspar::safe_ptr<caspar::core::mixer> caspar::core::video_channel::mixer()’ [-fpermissive]
+  safe_ptr<mixer> mixer();
+                        ^
+In file included from video_channel.cpp:24:0:
+video_channel.h:36:7: warning: changes meaning of ‘mixer’ from ‘class caspar::core::mixer’ [-fpermissive]
+ class mixer;
+       ^
+In file included from video_channel.cpp:24:0:
+video_channel.h:58:26: warning: declaration of ‘caspar::safe_ptr<caspar::core::output> caspar::core::video_channel::output()’ [-fpermissive]
+  safe_ptr<output> output();
+                          ^
+In file included from video_channel.cpp:24:0:
+video_channel.h:37:7: warning: changes meaning of ‘output’ from ‘class caspar::core::output’ [-fpermissive]
+ class output;
+       ^
+In file included from video_channel.cpp:26:0:
+video_format.h:108:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::video_format_desc::field_mode’ [-fpermissive]
+  field_mode::type  field_mode; // progressive, interlaced upper field first, interlaced lower field first
+                    ^
+video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^
+In file included from mixer/mixer.h:24:0,
+                 from video_channel.cpp:29:
+mixer/image/blend_modes.h:95:9: warning: declaration of ‘caspar::core::chroma caspar::core::blend_mode::chroma’ [-fpermissive]
+  chroma chroma;
+         ^
+mixer/image/blend_modes.h:26:8: warning: changes meaning of ‘chroma’ from ‘struct caspar::core::chroma’ [-fpermissive]
+ struct chroma
+        ^
+In file included from mixer/../producer/frame/frame_factory.h:27:0,
+                 from mixer/mixer.h:26,
+                 from video_channel.cpp:29:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:164:2: warning: declaration of ‘const caspar::core::channel_layout& caspar::core::multichannel_view<SampleT, Iter>::channel_layout() const’ [-fpermissive]
+  }
+  ^
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:81:8: warning: changes meaning of ‘channel_layout’ from ‘struct caspar::core::channel_layout’ [-fpermissive]
+ struct channel_layout
+        ^

@@ -1,0 +1,14 @@
+prefix=/home/sysnova/workspace/casparLinux/dependencies/ffmpeg/
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 55.33.100
+Requires: 
+Requires.private: libavcodec = 55.52.102
+Conflicts:
+Libs: -L${libdir}  -lavformat 
+Libs.private: -lstdc++ -ldl -ldl -lX11 -lxvidcore -lxavs -lx264 -lwavpack -lvpx -lvpx -lvorbisenc -lvorbis -logg -lvo-amrwbenc -lvo-aacenc -ltwolame -ltwolame -ltheoraenc -ltheoradec -logg -lspeex -lsoxr -lschroedinger-1.0 -lrtmp -lz -lgnutls -lopus -lopenjpeg -lopencore-amrwb -lopencore-amrnb -lmp3lame -lmodplug -lgsm -lgme -lstdc++ -lfreetype -lbluray -lass -lfontconfig -ldl -lm -lz -pthread -lrt
+Cflags: -I${includedir}

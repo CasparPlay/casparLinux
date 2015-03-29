@@ -1,0 +1,49 @@
+env.cpp: In function ‘void caspar::env::configure(const wstring&)’:
+env.cpp:71:31: warning: invalid conversion from ‘const wchar_t*’ to ‘wchar_t*’ [-fpermissive]
+   wchar_t *pstr = path_.c_str();
+                               ^
+env.cpp:90:21: warning: invalid conversion from ‘wchar_t’ to ‘const wchar_t*’ [-fpermissive]
+    media.append(L'/');
+                     ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from stdafx.h:32,
+                 from env.cpp:22:
+/usr/include/c++/4.9/bits/basic_string.h:1023:7: note: initializing argument 1 of ‘std::basic_string<_CharT, _Traits, _Alloc>& std::basic_string<_CharT, _Traits, _Alloc>::append(const _CharT*) [with _CharT = wchar_t; _Traits = std::char_traits<wchar_t>; _Alloc = std::allocator<wchar_t>]’
+       append(const _CharT* __s)
+       ^
+env.cpp:92:19: warning: invalid conversion from ‘wchar_t’ to ‘const wchar_t*’ [-fpermissive]
+    log.append(L'/');
+                   ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from stdafx.h:32,
+                 from env.cpp:22:
+/usr/include/c++/4.9/bits/basic_string.h:1023:7: note: initializing argument 1 of ‘std::basic_string<_CharT, _Traits, _Alloc>& std::basic_string<_CharT, _Traits, _Alloc>::append(const _CharT*) [with _CharT = wchar_t; _Traits = std::char_traits<wchar_t>; _Alloc = std::allocator<wchar_t>]’
+       append(const _CharT* __s)
+       ^
+env.cpp:94:25: warning: invalid conversion from ‘wchar_t’ to ‘const wchar_t*’ [-fpermissive]
+    ftemplate.append(L'/');
+                         ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from stdafx.h:32,
+                 from env.cpp:22:
+/usr/include/c++/4.9/bits/basic_string.h:1023:7: note: initializing argument 1 of ‘std::basic_string<_CharT, _Traits, _Alloc>& std::basic_string<_CharT, _Traits, _Alloc>::append(const _CharT*) [with _CharT = wchar_t; _Traits = std::char_traits<wchar_t>; _Alloc = std::allocator<wchar_t>]’
+       append(const _CharT* __s)
+       ^
+env.cpp:96:20: warning: invalid conversion from ‘wchar_t’ to ‘const wchar_t*’ [-fpermissive]
+    data.append(L'/');
+                    ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from stdafx.h:32,
+                 from env.cpp:22:
+/usr/include/c++/4.9/bits/basic_string.h:1023:7: note: initializing argument 1 of ‘std::basic_string<_CharT, _Traits, _Alloc>& std::basic_string<_CharT, _Traits, _Alloc>::append(const _CharT*) [with _CharT = wchar_t; _Traits = std::char_traits<wchar_t>; _Alloc = std::allocator<wchar_t>]’
+       append(const _CharT* __s)
+       ^
+env.cpp:98:26: warning: invalid conversion from ‘wchar_t’ to ‘const wchar_t*’ [-fpermissive]
+    thumbnails.append(L'/');
+                          ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from stdafx.h:32,
+                 from env.cpp:22:
+/usr/include/c++/4.9/bits/basic_string.h:1023:7: note: initializing argument 1 of ‘std::basic_string<_CharT, _Traits, _Alloc>& std::basic_string<_CharT, _Traits, _Alloc>::append(const _CharT*) [with _CharT = wchar_t; _Traits = std::char_traits<wchar_t>; _Alloc = std::allocator<wchar_t>]’
+       append(const _CharT* __s)
+       ^

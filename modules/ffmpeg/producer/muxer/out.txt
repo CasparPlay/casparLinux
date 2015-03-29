@@ -1,0 +1,40 @@
+In file included from display_mode.h:24:0,
+                 from frame_muxer.h:24,
+                 from frame_muxer.cpp:24:
+/home/sysnova/workspace/casparLinux/core/video_format.h:108:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::video_format_desc::field_mode’ [-fpermissive]
+  field_mode::type  field_mode; // progressive, interlaced upper field first, interlaced lower field first
+                    ^
+/home/sysnova/workspace/casparLinux/core/video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^
+In file included from frame_muxer.cpp:31:0:
+/home/sysnova/workspace/casparLinux/core/producer/frame/frame_transform.h:88:13: warning: declaration of ‘caspar::core::levels caspar::core::frame_transform::levels’ [-fpermissive]
+  levels     levels;
+             ^
+/home/sysnova/workspace/casparLinux/core/producer/frame/frame_transform.h:34:8: warning: changes meaning of ‘levels’ from ‘struct caspar::core::levels’ [-fpermissive]
+ struct levels
+        ^
+/home/sysnova/workspace/casparLinux/core/producer/frame/frame_transform.h:90:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::frame_transform::field_mode’ [-fpermissive]
+  field_mode::type  field_mode;
+                    ^
+In file included from display_mode.h:24:0,
+                 from frame_muxer.h:24,
+                 from frame_muxer.cpp:24:
+/home/sysnova/workspace/casparLinux/core/video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^
+In file included from frame_muxer.cpp:31:0:
+/home/sysnova/workspace/casparLinux/core/producer/frame/frame_transform.h:94:19: warning: extra qualification ‘caspar::core::frame_transform::’ on member ‘operator*=’ [-fpermissive]
+  frame_transform& frame_transform::operator*=(const frame_transform &other);
+                   ^
+/home/sysnova/workspace/casparLinux/core/producer/frame/frame_transform.h:95:18: warning: extra qualification ‘caspar::core::frame_transform::’ on member ‘operator*’ [-fpermissive]
+  frame_transform frame_transform::operator*(const frame_transform &other) const;
+                  ^
+In file included from /home/sysnova/workspace/casparLinux/core/producer/frame/frame_factory.h:27:0,
+                 from frame_muxer.cpp:33:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:164:2: warning: declaration of ‘const caspar::core::channel_layout& caspar::core::multichannel_view<SampleT, Iter>::channel_layout() const’ [-fpermissive]
+  }
+  ^
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:81:8: warning: changes meaning of ‘channel_layout’ from ‘struct caspar::core::channel_layout’ [-fpermissive]
+ struct channel_layout
+        ^

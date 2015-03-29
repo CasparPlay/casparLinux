@@ -1,0 +1,55 @@
+In file included from html_producer.cpp:24:0:
+/home/sysnova/workspace/casparLinux/core/video_format.h:108:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::video_format_desc::field_mode’ [-fpermissive]
+  field_mode::type  field_mode; // progressive, interlaced upper field first, interlaced lower field first
+                    ^
+/home/sysnova/workspace/casparLinux/core/video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^
+In file included from /home/sysnova/workspace/casparLinux/core/producer/frame/frame_factory.h:27:0,
+                 from html_producer.cpp:29:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:164:2: warning: declaration of ‘const caspar::core::channel_layout& caspar::core::multichannel_view<SampleT, Iter>::channel_layout() const’ [-fpermissive]
+  }
+  ^
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:81:8: warning: changes meaning of ‘channel_layout’ from ‘struct caspar::core::channel_layout’ [-fpermissive]
+ struct channel_layout
+        ^
+html_producer.cpp: In lambda function:
+html_producer.cpp:324:14: error: use of deleted function ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’
+       result = frames_.front();
+              ^
+In file included from /home/sysnova/workspace/casparLinux/core/producer/../monitor/monitor.h:23:0,
+                 from /home/sysnova/workspace/casparLinux/core/producer/frame_producer.h:24,
+                 from html_producer.h:24,
+                 from html_producer.cpp:22:
+/home/sysnova/workspace/casparLinux/common/memory/safe_ptr.h:32:7: note: ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’ is implicitly declared as deleted because ‘caspar::safe_ptr<caspar::core::basic_frame>’ declares a move constructor or move assignment operator
+ class safe_ptr
+       ^
+html_producer.cpp: In lambda function:
+html_producer.cpp:373:32: error: use of deleted function ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’
+        last_progressive_frame_ = frame2;
+                                ^
+html_producer.cpp: In lambda function:
+html_producer.cpp:383:20: error: use of deleted function ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’
+        last_frame_ = frame;
+                    ^
+html_producer.cpp: In lambda function:
+html_producer.cpp:394:31: error: use of deleted function ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’
+       last_progressive_frame_ = frame;
+                               ^
+html_producer.cpp:395:19: error: use of deleted function ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’
+       last_frame_ = frame;
+                   ^
+html_producer.cpp: In lambda function:
+html_producer.cpp:409:20: error: use of deleted function ‘caspar::safe_ptr<caspar::core::basic_frame>& caspar::safe_ptr<caspar::core::basic_frame>::operator=(const caspar::safe_ptr<caspar::core::basic_frame>&)’
+        last_frame_ = last_progressive_frame_;
+                    ^
+html_producer.cpp: In lambda function:
+html_producer.cpp:463:18: error: ‘class CefWindowInfo’ has no member named ‘SetTransparentPainting’
+      window_info.SetTransparentPainting(TRUE);
+                  ^
+html_producer.cpp:463:41: error: ‘TRUE’ was not declared in this scope
+      window_info.SetTransparentPainting(TRUE);
+                                         ^
+html_producer.cpp:464:18: error: ‘class CefWindowInfo’ has no member named ‘SetAsOffScreen’
+      window_info.SetAsOffScreen(nullptr);
+                  ^

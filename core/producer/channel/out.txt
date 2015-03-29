@@ -1,0 +1,49 @@
+In file included from channel_producer.cpp:29:0:
+../../video_channel.h:56:24: warning: declaration of ‘caspar::safe_ptr<caspar::core::stage> caspar::core::video_channel::stage()’ [-fpermissive]
+  safe_ptr<stage> stage();
+                        ^
+In file included from channel_producer.cpp:29:0:
+../../video_channel.h:35:7: warning: changes meaning of ‘stage’ from ‘class caspar::core::stage’ [-fpermissive]
+ class stage;
+       ^
+In file included from channel_producer.cpp:29:0:
+../../video_channel.h:57:24: warning: declaration of ‘caspar::safe_ptr<caspar::core::mixer> caspar::core::video_channel::mixer()’ [-fpermissive]
+  safe_ptr<mixer> mixer();
+                        ^
+In file included from channel_producer.cpp:29:0:
+../../video_channel.h:36:7: warning: changes meaning of ‘mixer’ from ‘class caspar::core::mixer’ [-fpermissive]
+ class mixer;
+       ^
+In file included from channel_producer.cpp:29:0:
+../../video_channel.h:58:26: warning: declaration of ‘caspar::safe_ptr<caspar::core::output> caspar::core::video_channel::output()’ [-fpermissive]
+  safe_ptr<output> output();
+                          ^
+In file included from channel_producer.cpp:28:0:
+../../consumer/output.h:37:7: warning: changes meaning of ‘output’ from ‘class caspar::core::output’ [-fpermissive]
+ class output : public target<std::pair<safe_ptr<read_frame>, std::shared_ptr<void>>>
+       ^
+In file included from ../frame/basic_frame.h:26:0,
+                 from channel_producer.cpp:31:
+/home/sysnova/workspace/casparLinux/core/video_format.h:108:20: warning: declaration of ‘caspar::core::field_mode::type caspar::core::video_format_desc::field_mode’ [-fpermissive]
+  field_mode::type  field_mode; // progressive, interlaced upper field first, interlaced lower field first
+                    ^
+/home/sysnova/workspace/casparLinux/core/video_format.h:74:8: warning: changes meaning of ‘field_mode’ from ‘struct caspar::core::field_mode’ [-fpermissive]
+ struct field_mode 
+        ^
+In file included from ../frame/frame_factory.h:27:0,
+                 from channel_producer.cpp:32:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:164:2: warning: declaration of ‘const caspar::core::channel_layout& caspar::core::multichannel_view<SampleT, Iter>::channel_layout() const’ [-fpermissive]
+  }
+  ^
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:81:8: warning: changes meaning of ‘channel_layout’ from ‘struct caspar::core::channel_layout’ [-fpermissive]
+ struct channel_layout
+        ^
+In file included from channel_producer.cpp:34:0:
+../../mixer/read_frame.h:58:124: warning: declaration of ‘virtual const caspar::core::multichannel_view<const int, const int*> caspar::core::read_frame::multichannel_view() const’ [-fpermissive]
+  virtual const multichannel_view<const int32_t, boost::iterator_range<const int32_t*>::const_iterator> multichannel_view() const;
+                                                                                                                            ^
+In file included from ../frame/frame_factory.h:27:0,
+                 from channel_producer.cpp:32:
+/home/sysnova/workspace/casparLinux/core/mixer/audio/audio_util.h:108:7: warning: changes meaning of ‘multichannel_view’ from ‘class caspar::core::multichannel_view<const int, const int*>’ [-fpermissive]
+ class multichannel_view
+       ^
